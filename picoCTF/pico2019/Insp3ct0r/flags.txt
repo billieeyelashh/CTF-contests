@@ -1,0 +1,14 @@
+1. Part 
+picoCTF{tru3_d3 
+
+2. Part 
+t3ct1ve_0r_ju5t
+
+3. Part 
+_lucky?832b0699
+
+FinalFlag
+picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?832b0699}
+
+
+
