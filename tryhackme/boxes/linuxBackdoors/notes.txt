@@ -1,0 +1,12 @@
+# Learning common Linux backdoors
+
+1. ssh Backdoor simply generating ssh keys 
+
+	$ cd /root/.ssh
+	$ ssh-keygen
+
+	// rename to public Key to "authorized_keys"
+
+	//giving key the right permissons
+	$ chmod 600 id_rsa
+
