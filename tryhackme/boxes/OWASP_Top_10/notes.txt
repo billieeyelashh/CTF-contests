@@ -1,0 +1,114 @@
+###Notes of the Box OWASP TOP 10 on tryhackme.com
+
+OWASP #1 Injection
+
+- Basic Point is that you can spawn a reverse shell with netcat in an input dialog that allows you to access that machine.
+- To find out that this input dialog execute commands just type some commands in it
+
+
+
+OWASP #2 Broken Authentication
+
+- Sometimes SQL injection works
+- You can registrate multiple users wih the same username, but you can then login with the same rights as them to the server by simply adding e.g. a space before the username/
+
+
+OWASP #3 Sensitive Data Exposure
+
+- Look for databases that are saved under the root dir of the webserver. It may contain some useful informatin :)
+
+
+
+OWASP #4 XML External Entity
+
+- XML often allows attacker to communicate with the backend systems
+- Two types XXE attacks
+	-> in-band: Attacker receives immediate response to the XXE payload
+	-> out-of-band: no immediate rrespones from the web app -> attacker has to reflect the output of their XXE payload to some other file on their own server.
+
+- What is XML?
+
+- defines a set of rules -> makes docs human readable and machine readable
+- Markup language for storing and transportating data
+- XML simplifies data sharing between various systems -> platform independent
+
+- What is DTD in XML?
+!DOCTYPE -> defines the root of the document
+
+
+- #XXE Payload
+- simple payload that allows you to access sytem files
+
+
+
+OWASP #5 Broken Access control
+
+- getting access  to files and directories via misconifgs
+
+	//First Scenario
+	- app uses unverfieded data in a SQL call that is accessing account information
+	//Second Scenario
+	- Browsing to URLs with Admin privelges
+	
+
+IDOR Challenge:
+
+-Idor is a type of access control vulnerability
+-Change ulr parameters to access other users on that system
+
+
+
+#OWASP 6 Security misconfig
+
+https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html
+
+
+
+#OWASP 7 Cross site scripting
+
+- Is a type of an injection
+
+Stored Xss: Don't remove the bad parts of the user input
+Reflected XSS: payload is part of the victims request to a website
+DOM-Based XSS: Make XSS room!
+
+XSS payloads
+
+http://www.xss-payloads.com/payloads/scripts/simplekeylogger.js.html
+http://www.xss-payloads.com/payloads/scripts/portscanapi.js.html
+
+- Best thing to learn this is to mess around with the box xxe playground
+
+
+
+
+#OWASP 8 Insecure Decentralisation
+
+- Replacing processed data with malicous code
+
+//Deserialization
+
+Process of converting obejcts in programming into simpler compatible formatting for transmitting between systems or networks for further processing or storage( or in reverse )
+
+//Cookies
+
+Remote Code Execution
+
+Cookie hacking is fun 
+
+
+
+#OWASP 9 Components With Known Vulnerabilities
+
+Cookie hacking is more fun than ever. Just read instructions. Tryhackme covers this quite easy.
+
+#OWASP 10 
+
+
+How to read log files.
+
+Pretty selfexplanatory
+
+
+
+

@@ -1,0 +1,14 @@
+x##Notes to the EAsyPeasyBox on THM
+
+
+- 3 open ports
+ 6554
+ 80
+
+
+- found Hash at :6554
+	a18672860d0510e5ab6699730763b250
+	md5
+
+- Cracking hash with hashcat
+
