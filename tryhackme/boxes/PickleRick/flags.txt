@@ -1,0 +1,5 @@
+#Flags for Pickle Rick box on TryHackMe
+
+#Login for the login.php page
+username: R1ckRul3s
+password: Wubbalubbadubdub
