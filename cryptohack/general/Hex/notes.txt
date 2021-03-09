@@ -1,0 +1,3 @@
+When we encrypt something the resulting ciphertext commonly has bytes which are not printable ASCII characters. If we want to share our encrypted data, it's common to encode it into something more user-friendly and portable across different systems.
+
+Included below is a the flag encoded as a hex string. Decode this back into bytes to get the flag.
