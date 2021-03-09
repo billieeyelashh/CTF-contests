@@ -1,0 +1,5 @@
+# Crack of Weak RSA
+
+
+We can uses Ganapaits RSACTFtool to encrypt the hidden message.
+Didn't require to write any code.
