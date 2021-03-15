@@ -1,0 +1,58 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-09 19:14 CET
+Nmap scan report for 46.101.91.21
+Host is up (0.024s latency).
+
+PORT      STATE SERVICE VERSION
+30901/tcp open  unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, Kerberos, LANDesk-RC, LDAPBindReq, LDAPSearchReq, LPDString, NCP, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, WMSRequest, X11Probe, afp, giop, ms-sql-s, oracle-tns: 
+|_    ROP me outside, how 'about dah?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30901-TCP:V=7.80%I=7%D=3/9%Time=6047BB1F%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(GenericLin
+SF:es,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(GetRequest
+SF:,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(HTTPOptions,
+SF:20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(RTSPRequest,2
+SF:0,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(RPCCheck,20,"R
+SF:OP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(DNSVersionBindReqT
+SF:CP,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(DNSStatusR
+SF:equestTCP,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(Hel
+SF:p,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(SSLSessionR
+SF:eq,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(TerminalSe
+SF:rverCookie,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(TL
+SF:SSessionReq,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(K
+SF:erberos,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(SMBPr
+SF:ogNeg,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(X11Prob
+SF:e,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(FourOhFourR
+SF:equest,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(LPDStr
+SF:ing,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(LDAPSearc
+SF:hReq,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(LDAPBind
+SF:Req,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(SIPOption
+SF:s,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(LANDesk-RC,
+SF:20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(TerminalServe
+SF:r,20,"ROP\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(NCP,20,"ROP
+SF:\x20me\x20outside,\x20how\x20'about\x20dah\?\n")%r(NotesRPC,20,"ROP\x20
+SF:me\x20outside,\x20how\x20'about\x20dah\?\n")%r(JavaRMI,20,"ROP\x20me\x2
+SF:0outside,\x20how\x20'about\x20dah\?\n")%r(WMSRequest,20,"ROP\x20me\x20o
+SF:utside,\x20how\x20'about\x20dah\?\n")%r(oracle-tns,20,"ROP\x20me\x20out
+SF:side,\x20how\x20'about\x20dah\?\n")%r(ms-sql-s,20,"ROP\x20me\x20outside
+SF:,\x20how\x20'about\x20dah\?\n")%r(afp,20,"ROP\x20me\x20outside,\x20how\
+SF:x20'about\x20dah\?\n")%r(giop,20,"ROP\x20me\x20outside,\x20how\x20'abou
+SF:t\x20dah\?\n");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 3.1 (89%), Linux 3.2 (89%), HP P2000 G3 NAS device (88%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (88%), Linux 2.6.32 (88%), Linux 2.6.39 - 3.2 (88%), Infomir MAG-250 set-top box (88%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (88%), Linux 3.1 - 3.2 (88%), Linux 3.2 - 4.9 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 11 hops
+
+TRACEROUTE (using port 30901/tcp)
+HOP RTT      ADDRESS
+1   2.64 ms  fritz.box (192.168.178.1)
+2   14.73 ms bras-vc2.netcologne.de (195.14.226.125)
+3   14.51 ms ip-core-eup2-ae12.netcologne.de (89.1.16.161)
+4   14.31 ms bdr-eup1-ae1.netcologne.de (195.14.195.50)
+5   17.16 ms fra1-edge1.digitalocean.com (80.81.193.141)
+6   ... 10
+11  24.30 ms 46.101.91.21
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 95.81 seconds
