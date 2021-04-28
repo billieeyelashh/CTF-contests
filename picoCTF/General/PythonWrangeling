@@ -1,0 +1,7 @@
+$ sudo chmod +x ende.py
+
+$ sudo python3 ende.py -e flag.txt.ende
+
+
+## Enter Password and retrieve flag 
+

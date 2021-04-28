@@ -1,0 +1,113 @@
+# Here presented 3 files do a little researh what they are
+
+'''
+$ file heapedit 
+
+returns:
+heapedit: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=6967c296c25feb50c480b4edb5c56c234bb30392, not stripped
+
+$ file libc.so.6
+
+returns:
+libc.so.6: ELF 64-bit LSB shared object, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=d3cf764b2f97ac3efe366ddd07ad902fb6928fd7, for GNU/Linux 3.2.0, stripped
+
+$ file Makefile
+
+returns
+Makefile: makefile script, ASCII text
+
+#General
+Malloc allocate a block of memeory of the heap
+Heaps are tree like datastructures
+
+
+I try to execute the make file returns this 
+
+gcc: error: heapedit.c: No such file or directory
+make: *** [Makefile:2: all] Error 1
+
+# Question is how to view the heapedit and lib.so.6 files
+
+
+'''
+'''
+Interestings
+
+$ Strings heapedit 
+    this is H
+a  randomH
+ string.H
+CongratsH
+! Your fH
+lag is: H
+Sorry! TH
+his won'H
+t help yH
+
+flag.txt
+You may edit one byte in the program.
+Address: 
+Value: 
+
+
+May you just need to edit one byte in the file to retrieve flag.txt
+
+
+$ strings lib.c.so6
+
+he `sigstack' function is dangerous.  `sigaltstack' should be used instead.
+sigreturn is not implemented and will always fail
+warning: `siggetmask' is obsolete; `sigprocmask' is best
+the use of `tmpnam' is dangerous, better use `mkstemp'
+the use of `tmpnam_r' is dangerous, better use `mkstemp'
+the use of `tempnam' is dangerous, better use `mkstemp'
+`sys_errlist' is deprecated; use `strerror' or `strerror_r' instead
+`sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
+the `gets' function is dangerous and should not be used.
+the `getpw' function is dangerous and should not be used.
+the 're_max_failures' variable is obsolete and will go away.
+lchmod is not implemented and will always fail
+the `llseek' function may be dangerous; use `lseek64' instead.
+the `getwd' function is dangerous and should not be used.
+the `getwd' function is dangerous and should not be used.
+sstk is not implemented and will always fail
+revoke is not implemented and will always fail
+the use of `mktemp' is dangerous, better use `mkstemp' or `mkdtemp'
+gtty is not implemented and will always fail
+stty is not implemented and will always fail
+chflags is not implemented and will always fail
+fchflags is not implemented and will always fail
+__compat_bdflush is not implemented and will always fail
+the `gets' function is dangerous and should not be used.
+inet6_option_space is obsolete, use the RFC 3542 interfaces
+inet6_option_init is obsolete, use the RFC 3542 interfaces
+inet6_option_append is obsolete, use the RFC 3542 interfaces
+inet6_option_alloc is obsolete, use the RFC 3542 interfaces
+inet6_option_next is obsolete, use the RFC 3542 interfaces
+inet6_option_find is obsolete, use the RFC 3542 interfaces
+getmsg is not implemented and will always fail
+putmsg is not implemented and will always fail
+fattach is not implemented and will always fail
+fdetach is not implemented and will always fail
+setlogin is not implemented and will always fail
+
+
+Maybe the vuln lays in the sigstack  tmpnam, gets, getpw funcitons
+Searching for exploits on gets funcion
+
+
+###open the files with binaryninja 
+
+0040086f returns the flag
+
+0040086f  void var_58
+0040086f  fgets(buf: &var_58, n: 0x40, fp: fopen(filename: "flag.txt", mode: data_400b08))
+
+## Maybe overwrite buffer and point to the flag 
+
+
+
+
+
+'''
+

