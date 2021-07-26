@@ -1,0 +1,5 @@
+- Always redo the challenge
+- Always make sure you really got what you have done in the exploitation process
+- solve 2 to 3 challenges a day ( out of it there is maybe one warmeup challenge for the explanation of the vuln)
+
+- should be doable in 3 Months to the end of the year
