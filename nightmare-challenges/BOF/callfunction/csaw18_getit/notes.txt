@@ -1,0 +1,22 @@
+# Buffer overflow challenge 64bit x86
+
+- main function can read in 32 bytes but doesn't check for more so we can overwrite the saved return address again.
+- There is also a function with give shell iwth the adress 0x4005b6
+- offset between start of the input and the return adress is 40bytes 32 from the input char after that we have the 8 bytes stack pointer(64bit)
+
+# Steps to take 
+1. find out the bytes to overflow the buffer 
+2. point to give shell function
+
+
+# Calculate bytes
+
+
+0x7fffffffde08 -0x7fffffffdde0 = 0x28
+
+- After 28 bytes I can point to the give shell function
+
+
+Worked!!
+
+Would not work with stack canaries.
