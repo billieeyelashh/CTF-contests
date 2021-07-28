@@ -1,0 +1,3 @@
+gets(input) funciton reads in ulimited bytes.
+
+we can use it to overwrite the contents of local18
