@@ -1,0 +1,9 @@
+ELF 32-bit LSB executable, Intel 80386
+
+Bufov is 20 bytes big and a dword pointer points on it with 4 bytes extra
+
+
+- theres is a functiion printFlag at 0x0804856b I'll just need to overwrite the second buffer with 20 or 24 bytes then I can overflow the return adress
+- For this type of challenge you search for the address right after the function call1
+
+
