@@ -1,0 +1,8 @@
+- Vuln is the vulnerarble function. Theres a char buffer of 8 bu the gets function can read in more bytes.
+- So we can overwrite anything else after that 8 bytes
+- offset seems to be the same always but this has alsr so get the flag address
+we overwrite it with the flag address p32(0x80485ab)
+
+
+
+0xffffd01c - 0xffffd008(or 0xffffd010) = 0x14 bytes or 0xC bytes
